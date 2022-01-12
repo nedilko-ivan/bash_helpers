@@ -9,3 +9,17 @@ ln -s ../../../some_folder folder_to_sim_link
 
 # kill some process on machine
 kill $(lsof -t -i:8080)
+
+
+#connect to remote instance with PEM key
+ssh -i {path to .pem key} user@ip
+Example: ssh -i ./key.pem ubuntu@192.168.0.11
+
+#Upload file to remote instance
+scp -i ${path to key} ${local path}   ${user}@${ip}:/{path from user folder} 
+Example: scp -i ./file.txt ./key.pem ubuntu@192.168.0.11:/repo/
+
+
+#Download file to remote instance
+scp -i ${path to key} ${user}@${ip}:/{path from user folder}  ${local path}   
+Exmaple: scp -i ./key.pem ubuntu@192.168.0.11:/repo/file.txt ./
