@@ -7,5 +7,5 @@ ssh-add -K ~/.ssh/some_key_file
 ln -s ../../../some_folder folder_to_sim_link
 # first arg is from WHERE we need to create sim link and second argument target
 
-# kill some process on moshine
+# kill some process on machine
 kill $(lsof -t -i:8080)
